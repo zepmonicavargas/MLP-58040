@@ -9,8 +9,8 @@ import time
 pathlib.PosixPath = pathlib.WindowsPath
 
 # Specify the path to your YOLOv5 repository directory and weights file
-yolov5_dir = r'C:\Users\xienina\yolov5'
-weights_path = r'C:\Users\xienina\yolov5\best.pt'
+yolov5_dir = r'C:\Users\Zep\yolov5'
+weights_path = r'C:\Users\Zep\yolov5\best.pt'
 
 # Load the YOLOv5 model using torch.hub.load()
 model = torch.hub.load(str(yolov5_dir), 'custom', path=str(weights_path), source='local')
@@ -24,7 +24,7 @@ arduino_baudrate = 9600
 arduino = serial.Serial(arduino_port, arduino_baudrate)
 time.sleep(2)  # Allow time for Arduino to initialize
 
-save_dir = r'C:\Users\xienina\Desktop\MLP CAPTURED'
+save_dir = r'C:\Users\Zep\Desktop\MLP CAPTURED'
 
 # Function to capture photo, save it, and perform object detection
 def capture_and_detect():
@@ -127,4 +127,5 @@ while True:
 # Release webcam, close OpenCV windows, and close serial connection
 cap.release()
 cv2.destroyAllWindows()
+
 arduino.close()
